@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-fundamentals-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosJBM/nodejs-fundamentals-challenge.git"
+  },
+  "author": "Marcos Botene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcosJBM/nodejs-fundamentals-challenge/issues"
+  },
+  "homepage": "https://github.com/MarcosJBM/nodejs-fundamentals-challenge#readme"
+}
