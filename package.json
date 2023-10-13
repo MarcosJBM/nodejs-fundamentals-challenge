@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MarcosJBM/nodejs-fundamentals-challenge/issues"
   },
-  "homepage": "https://github.com/MarcosJBM/nodejs-fundamentals-challenge#readme"
+  "homepage": "https://github.com/MarcosJBM/nodejs-fundamentals-challenge#readme",
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
 }
