@@ -26,4 +26,18 @@ export const tasksRoutes = [
       return response.writeHead(201).end();
     },
   },
+  {
+    method: 'GET',
+    path: buildRoutePath('/tasks'),
+    handler: (request, response) => {
+      const { title, description } = request.query;
+
+      const tasks = database.select('tasks', {
+        title,
+        description,
+      });
+
+      return response.end(JSON.stringify(tasks));
+    },
+  },
 ];
