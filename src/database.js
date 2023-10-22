@@ -4,14 +4,8 @@ function filterSearchValues(search) {
   let newSearch = {};
 
   for (const key in search) {
-    if (search[key]) {
-      if (
-        typeof search[key] === 'string' ||
-        typeof search[key] === 'boolean' ||
-        typeof search[key] === 'number'
-      ) {
-        newSearch[key] = search[key];
-      }
+    if (search[key] && typeof search[key] === 'string') {
+      newSearch[key] = search[key];
     }
   }
 
@@ -57,7 +51,7 @@ export class Database {
     if (hasPropertiesWithValuesInSearch) {
       data = data.filter(row => {
         return Object.entries(filteredSearch).some(([key, value]) => {
-          return row[key].includes(value);
+          return row[key].toLowerCase().includes(value.toLowerCase());
         });
       });
     }
