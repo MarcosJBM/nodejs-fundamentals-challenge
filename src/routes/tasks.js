@@ -40,4 +40,31 @@ export const tasksRoutes = [
       return response.end(JSON.stringify(tasks));
     },
   },
+  {
+    method: 'PUT',
+    path: buildRoutePath('/tasks/:id'),
+    handler: (request, response) => {
+      const { id } = request.params;
+
+      const { title, description } = request.body;
+
+      const tasks = database.select('tasks');
+
+      const task = tasks.find(task => task.id === id);
+
+      if (!task) return response.writeHead(404).end();
+
+      const updatedTask = {
+        title: title || task.title,
+        description: description || task.description,
+        completed_at: task.completed_at,
+        created_at: task.created_at,
+        updated_at: new Date(),
+      };
+
+      database.update('tasks', id, updatedTask);
+
+      return response.writeHead(204).end();
+    },
+  },
 ];
