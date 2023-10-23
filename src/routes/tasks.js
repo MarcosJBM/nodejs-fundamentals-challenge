@@ -84,4 +84,27 @@ export const tasksRoutes = [
       return response.writeHead(204).end();
     },
   },
+  {
+    method: 'PATCH',
+    path: buildRoutePath('/tasks/:id/complete'),
+    handler: (request, response) => {
+      const { id } = request.params;
+
+      const tasks = database.select('tasks');
+
+      const task = tasks.find(task => task.id === id);
+
+      if (!task) return response.writeHead(404).end();
+
+      const updatedTask = {
+        ...task,
+        completed_at: task.completed_at ? null : new Date(),
+        updated_at: new Date(),
+      };
+
+      database.update('tasks', id, updatedTask);
+
+      return response.writeHead(204).end();
+    },
+  },
 ];
