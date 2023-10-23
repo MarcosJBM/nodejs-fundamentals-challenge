@@ -67,4 +67,21 @@ export const tasksRoutes = [
       return response.writeHead(204).end();
     },
   },
+  {
+    method: 'DELETE',
+    path: buildRoutePath('/tasks/:id'),
+    handler: (request, response) => {
+      const { id } = request.params;
+
+      const tasks = database.select('tasks');
+
+      const task = tasks.find(task => task.id === id);
+
+      if (!task) return response.writeHead(404).end();
+
+      database.delete('tasks', id);
+
+      return response.writeHead(204).end();
+    },
+  },
 ];
