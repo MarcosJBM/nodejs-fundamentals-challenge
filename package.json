@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node --watch src/server.js",
+    "import-tasks": "node streams/index.js",
     "lint": "eslint --fix .",
     "pretty": "prettier --write ."
   },
