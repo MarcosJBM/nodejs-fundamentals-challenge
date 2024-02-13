@@ -2,10 +2,12 @@
   <img src=".github/logo.svg" height="72"/>
 </div>
 
-## 📖 About
+# 📖 About
 
-The idea of this challenge is to practice the basic concepts of [Node.js](https://nodejs.org/en), creating a CRUD of tasks
+The project was developed to practice the basic concepts of [Node.js](https://nodejs.org/en), by creating a CRUD of tasks.
 
-## 🚀 Going beyond
+This project is part of a series of optional challenges on [Rocketseat's](https://www.rocketseat.com.br/) Ignite course, Node.js trail.
+
+# 🚀 Going beyond
 
 - [x] Importing tasks through a .csv file
